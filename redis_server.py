@@ -5,6 +5,6 @@ r = redis.Redis(
     port=6379
 )
 
-r.set('beg','phone')
+r.set('beg','phonexx')
 
 print(r.get('beg'))

@@ -13,14 +13,14 @@ def punctuation(type):
         case t.punctuations:
             return string.punctuation
         
-def random_characters(k=128):
-    pub_key = f"public_key"
+def random_characters(k=64):
     ascii_letter = string.ascii_letters
     hexdigits = string.hexdigits
     # random_characters = ascii_letter + ''.join(punctuations) + hexdigits
-    random_characters = ascii_letter + hexdigits
+    punctuations = punctuation(t.punctuation)
+    random_characters = ascii_letter + hexdigits + punctuations
     # return pub_key + punctuation + ''.join(random.choices(list(random_characters), k=k))
-    return pub_key + punctuation(t.punctuation) + ''.join(random.choices(list(random_characters), k=k))
+    return ''.join(random.choices(list(random_characters), k=k))
 
 print(random_characters())
 
